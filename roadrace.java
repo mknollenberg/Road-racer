@@ -1,5 +1,4 @@
-
-package com.almasb.invaders;
+package application;
 
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
@@ -23,6 +22,7 @@ public class roadrace extends Application {
     private Parent createContent() {
         root.setPrefSize(600, 800);
 
+        root.getChildren().add(background.generate());
         root.getChildren().add(player);
 
         AnimationTimer timer = new AnimationTimer() {
@@ -57,7 +57,7 @@ public class roadrace extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Scene scene = new Scene(createContent());
-
+        
         scene.setOnKeyPressed(e -> {
             switch (e.getCode()) {
                 case A:
